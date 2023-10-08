@@ -1,13 +1,16 @@
 public class SensorDataProcessor {
-// Senson data and limits.
+
+// Sensor data and limits.
 public double[][][] data;
 public double[][] limit;
-// constructor
-public DataProcessor(double[][][] data, double[][] limit) {
+
+// Constructor
+public SensorDataProcessor(double[][][] data, double[][] limit) {
 this.data = data;
 this.limit = limit;
 }
-// calculates average of sensor data
+
+// Calculates average of sensor data
 private double average(double[] array) {
 int i = 0;
 double val = 0;
@@ -16,12 +19,14 @@ val += array[i];
 }
 return val / array.length;
 }
+
 // calculate data
 public void calculate(double d) {
 int i, j, k = 0;
 double[][][] data2 = new
 double[data.length][data[0].length][data[0][0].length];
 BufferedWriter out;
+
 // Write racing stats data into a file
 try {
 out = new BufferedWriter(new FileWriter("RacingStatsData.txt"));
